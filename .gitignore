@@ -21,3 +21,31 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+Makefile
+.classpath
+*.iml
+/sdklog/
+points-server/sdklog/
+.project
+.settings
+logs
+*.log
+*.tmp
+*.swp
+*.classpath
+target
+install-*
+*MF
+*.pyc
+*.iml
+*.ipr
+*.iws
+*.idea
+*/lib/*
+.project
+*.class
+.DS_Store
+nohup.out
+*.pid
+local-run-temp-log4j2.yaml
+**/worker/tool/*.java
