@@ -23,11 +23,9 @@ public class BasicAddByIndex {
      * @param key   插入的元素
      */
     public static void addByIndex(int[] arr, int size, int index, int key) {
-        //注意这里是错的，是size >= arr.length-1，或者size > arr.length都行
         if (size >= arr.length-1) {
             throw new IllegalArgumentException("Add failed. array is full.");
         }
-        //这里后面的条件应该是index >= arr.length
         if (index < 0 || index > arr.length)
             throw new IllegalArgumentException("Add failed.");
         for (int i = size-1 ; i >= index; i--)

@@ -1,9 +1,16 @@
 package unit1_array.ch1.basic;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static tools.ArrayTool.printList;
-public class BasicDeleteByIndex {
+public class BasicDelete {
     public static void main(String[] args) {
+
+
         int[] arr = new int[]{2, 3, 4, 9, 10, 11, 12};
+        System.out.println(Arrays.toString(arr));
         //根据索引位置删除
         removeByIndex(arr, 7, 2);
         printList("根据索引删除", arr, 6);

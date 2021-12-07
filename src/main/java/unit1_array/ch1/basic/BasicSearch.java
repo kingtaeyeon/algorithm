@@ -1,7 +1,11 @@
 package unit1_array.ch1.basic;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class BasicSearch {
     public static void main(String[] args) {
+
         int[] arr = new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10};
         //通过索引查找
         int index = 2;
