@@ -1,4 +1,4 @@
-package unit1_array.ch1.ch3.topic4_2;
+package unit1_array.ch4_hot_problem.topic4_2;
 
 /**
  * 3.1. 热身专题1：判断数组元素是否有序

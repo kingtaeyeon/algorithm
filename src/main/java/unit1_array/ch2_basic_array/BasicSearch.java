@@ -1,7 +1,4 @@
-package unit1_array.ch1.basic;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
+package unit1_array.ch2_basic_array;
 
 public class BasicSearch {
     public static void main(String[] args) {

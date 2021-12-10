@@ -1,7 +1,5 @@
-package unit1_array.ch1.basic;
+package unit1_array.ch2_basic_array;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import static tools.ArrayTool.printList;

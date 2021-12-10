@@ -1,4 +1,4 @@
-package unit1_array.ch1.ch3.topic4_3;
+package unit1_array.ch4_hot_problem.topic4_3;
 
 import java.util.Arrays;
 

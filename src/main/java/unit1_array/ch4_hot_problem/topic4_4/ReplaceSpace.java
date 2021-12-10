@@ -1,4 +1,4 @@
-package unit1_array.ch1.ch3.topic4_4;
+package unit1_array.ch4_hot_problem.topic4_4;
 
 /**
  * 替换空格

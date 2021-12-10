@@ -1,6 +1,8 @@
-package unit1_array.ch1.basic;
+package unit1_array.ch2_basic_array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class BasicCreateArray {
     public static void main(String[] args) {
@@ -13,5 +15,8 @@ public class BasicCreateArray {
         //这么写也行:
         int[] arr3 = {2, 5, 0, 4, 6, -10};
         System.out.println("arr3" + Arrays.toString(arr3));
+        int[] nums;
+        List<Integer> res=new ArrayList<>();
+
     }
 }
