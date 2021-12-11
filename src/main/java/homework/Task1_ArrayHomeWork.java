@@ -40,7 +40,7 @@ public class Task1_ArrayHomeWork {
 
         int[] arr2 = {0, 2, 2, 2, 2, 2, 5};
         removeAllDuplicate(arr2);
-        //此时arr1的前三个元素为[0 5]
+        //此时arr1的前两个元素为[0 5]
 
         System.out.println(Arrays.toString(arr1));
         System.out.println(Arrays.toString(arr2));
