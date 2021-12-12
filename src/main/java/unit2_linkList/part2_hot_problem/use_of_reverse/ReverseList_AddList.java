@@ -1,4 +1,4 @@
-package unit2_linkList.part2_hot_problem.reverse;
+package unit2_linkList.part2_hot_problem.use_of_reverse;
 
 import java.util.Stack;
 

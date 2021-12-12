@@ -26,7 +26,7 @@ public class BasicAddByIndex {
         if (size >= arr.length - 1) {
             throw new IllegalArgumentException(" array is full.");
         }
-        if (index < 0 || index >= arr.length - 1)
+        if (index < 0 || index > arr.length - 1)
             throw new IllegalArgumentException("Add failed.");
         for (int i = size - 1; i >= index; i--)
             arr[i + 1] = arr[i];
