@@ -1,4 +1,4 @@
-package unit1_array.ch4_hot_problem.topic4_5;
+package unit1_array.part4_hot_problem.topic4_5;
 
 public class DeleteVal {
     public static void main(String[] args) {

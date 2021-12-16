@@ -1,13 +1,14 @@
-package unit1_array.ch4_hot_problem.topic4_5;
+package unit1_array.part4_hot_problem.topic4_5;
 
 public class DeleteCommon {
     public static void main(String[] args) {
-        int[] arr = new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
-        int last = removeDuplicates(arr);
+        int[] arr = new int[]{1, 1, 2};
+        int last = deleteRepeatVal(arr);
         for (int i = 0; i < last; i++) {
             System.out.print(arr[i] + "  ");
         }
     }
+
     public static int removeDuplicates(int[] nums) {
         int n = nums.length;
         //j用来标记有效位
@@ -19,6 +20,20 @@ public class DeleteCommon {
             }
         }
         return j;
+    }
+
+    public static int deleteRepeatVal(int[] nums) {
+        int slow = 0;
+        int fast = 1;
+        while (fast < nums.length) {
+            if (nums[slow] == nums[fast]) {
+                fast++;
+            } else {
+                nums[++slow] = nums[fast++];
+            }
+
+        }
+        return slow;
     }
 
 }

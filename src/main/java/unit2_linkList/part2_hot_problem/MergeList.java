@@ -2,7 +2,7 @@ package unit2_linkList.part2_hot_problem;
 
 public class MergeList {
     public static void main(String[] args) {
-        int[] a = {1, 4, 8, 12};
+        int[] a = {1, 5, 8, 12};
         ListNode nodeA = initLinkedList(a);
         int[] b = {2, 5, 9, 13};
         ListNode nodeB = initLinkedList(b);
@@ -10,24 +10,38 @@ public class MergeList {
         ListNode nodeC = initLinkedList(c);
         ListNode[] array = {nodeA, nodeB, nodeC};
         ListNode d = null;
-        int testMethod = 4;
-        switch (testMethod) {
-            case 1://最直接的方法
-                d = mergeTwoLists(nodeA, nodeB);
-                break;
-            case 2://简化方法1中的方法
-                d = mergeTwoListsMoreSimple(nodeA, nodeB);
-                break;
-            case 3://通过递归方式来实现
-                d = mergeTwoListsByRe(nodeA, nodeB);
-                break;
-            case 4://测试K个链表合并
-                d = mergeKLists(array);
-        }
+        int testMethod = 2;
+        int[] e = {1, 2, 3, 4, 5, 6};
+        ListNode nodeD = initLinkedList(e);
+        System.out.println(middleNode(nodeD).val);
+
+//
+//        switch (testMethod) {
+//            case 1://最直接的方法
+//                d = mergeTwoLists2(nodeA, nodeB);
+//                break;
+//            case 2://简化方法1中的方法
+//                d = mergeTwoListsMoreSimple(nodeA, nodeB);
+//                break;
+//            case 3://通过递归方式来实现
+//                d = mergeTwoListsByRe(nodeA, nodeB);
+//                break;
+//            case 4://测试K个链表合并
+//                d = mergeKLists(array);
+//        }
 
 
         System.out.println(toString(d));
 
+    }
+
+    public static ListNode middleNode(ListNode head) {
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 
     /**
@@ -41,7 +55,7 @@ public class MergeList {
         // write code here
         ListNode newHead = new ListNode(-1);
         ListNode res = newHead;
-        while (list1 != null || list2 != null) { //这么写，减少while的数量，可能耗时会小一些
+        while (list1 != null || list2 != null) {
 
             if (list1 != null && list2 != null) {//都不为空的情况
                 if (list1.val < list2.val) {
@@ -70,6 +84,44 @@ public class MergeList {
         }
         return res.next;
     }
+
+
+    public static ListNode mergeTwoLists2(ListNode list1, ListNode list2) {
+        // write code here
+        ListNode newHead = new ListNode(-1);
+        ListNode res = newHead;
+        while (list1 != null && list2 != null) {
+
+            if (list1.val < list2.val) {
+                newHead.next = list1;
+                list1 = list1.next;
+            } else if (list1.val > list2.val) {
+                newHead.next = list2;
+                list2 = list2.next;
+            } else { //相等的情况，分别接两个链
+                newHead.next = list2;
+                list2 = list2.next;
+                newHead = newHead.next;
+                newHead.next = list1;
+                list1 = list1.next;
+            }
+            newHead = newHead.next;
+
+        }
+        while (list1 != null) {
+            newHead.next = list1;
+            list1 = list1.next;
+            newHead = newHead.next;
+        }
+        while (list2 != null) {
+            newHead.next = list2;
+            list2 = list2.next;
+            newHead = newHead.next;
+        }
+
+        return res.next;
+    }
+
 
     /**
      * 方法2：比方法1更加精简的实现方法

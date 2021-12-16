@@ -3,6 +3,7 @@ package unit1_array.ch2_basic_array;
 import java.util.Arrays;
 
 import static tools.ArrayTool.printList;
+
 public class BasicDelete {
     public static void main(String[] args) {
 
@@ -18,7 +19,7 @@ public class BasicDelete {
 
     /**
      * @param arr
-     * @param size 数组元素数量
+     * @param size  数组元素数量
      * @param index 删除位置
      * @return
      */
@@ -26,14 +27,16 @@ public class BasicDelete {
         if (index < 0 || index >= size)
             throw new IllegalArgumentException("Remove failed. Index is illegal.");
         int ret = arr[index];
-        for (int i = index + 1; i < size; i++)
+        for (int i = index + 1; i < size; i++) {
             arr[i - 1] = arr[i];
+        }
         size--;
         return ret;
     }
 
     /**
      * 从数组中删除元素e
+     *
      * @param arr
      * @param size 数组
      * @param key
