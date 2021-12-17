@@ -20,7 +20,7 @@ public class ReverseListKGroup {
         Node head = initLinkedList(score);
 
         Node newHead = reverseKGroup(head);
-//        这里应该输出 4 3 2 1 8 7 6 5 9 10，最后的 9 和10 不足一个分组就不用反转
+//        这里应该输出 4 3 2 1 8 7 6 5 9 10，最后的9 10不足一个分组就不用反转
         printList(newHead);
 
     }
