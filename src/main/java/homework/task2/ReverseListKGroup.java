@@ -3,7 +3,7 @@ package homework.task2;
 /**
  * 第三题：
  * 链表算法的菁华是反转问题，反转问题的珠峰是K个一组反转，请你参考讲义2.6.3实现个K个一组反转的功能
- * 下面给了10个数，请实现4个一组反转的功能
+ * 下面给了10个数，请实现4个一组反转的功能，最后剩下不够一组的不用反转
  * 提示：
  * 你可以参考网上的材料和代码，只要你能理解，并且将下面的case运行出来就行
  * 要求：
@@ -20,7 +20,7 @@ public class ReverseListKGroup {
         Node head = initLinkedList(score);
 
         Node newHead = reverseKGroup(head);
-//        这里应该输出 4 3 2 1 8 7 6 5 9 10
+//        这里应该输出 4 3 2 1 8 7 6 5 9 10，最后的 9 和10 不足一个分组就不用反转
         printList(newHead);
 
     }
