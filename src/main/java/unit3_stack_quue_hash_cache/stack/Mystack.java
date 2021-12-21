@@ -1,12 +1,13 @@
 package unit3_stack_quue_hash_cache.stack;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 
 class Mystack<T> {
     //实现栈的数组
     private Object[] stack;
-    //数组大小
-    private int size;
+    //栈顶元素
+    private int top;
 
     Mystack() {
         //初始容量为10
@@ -15,29 +16,29 @@ class Mystack<T> {
 
     //判断是否为空
     public boolean isEmpty() {
-        return size == 0;
+        return top == 0;
     }
 
     //返回栈顶元素
     public T peek() {
         T t = null;
-        if (size > 0)
-            t = (T) stack[size - 1];
+        if (top > 0)
+            t = (T) stack[top - 1];
         return t;
     }
 
     public void push(T t) {
-        expandCapacity(size + 1);
-        stack[size] = t;
-        size++;
+        expandCapacity(top + 1);
+        stack[top] = t;
+        top++;
     }
 
     //出栈
     public T pop() {
         T t = peek();
-        if (size > 0) {
-            stack[size - 1] = null;
-            size--;
+        if (top > 0) {
+            stack[top - 1] = null;
+            top--;
         }
         return t;
     }
