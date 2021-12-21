@@ -6,7 +6,7 @@ public class ReverseListBetween {
         ListNode nodeA = initLinkedList(a);
 
         ListNode d = null;
-        int testMethod = 2;
+        int testMethod = 1;
         switch (testMethod) {
             case 1://方法1：穿针引线法
                 d = reverseBetween(nodeA, 2, 4);
@@ -50,7 +50,7 @@ public class ReverseListBetween {
 
         // 第 3 步：切断出一个子链表（截取链表）
         ListNode leftNode = pre.next;
-        ListNode curr = rightNode.next;
+        ListNode succ = rightNode.next;
 
         // 注意：切断链接
         pre.next = null;
@@ -61,7 +61,7 @@ public class ReverseListBetween {
 
         // 第 5 步：接回到原来的链表中
         pre.next = rightNode;
-        leftNode.next = curr;
+        leftNode.next = succ;
         return dummyNode.next;
     }
 
@@ -71,7 +71,7 @@ public class ReverseListBetween {
      * @param head
      * @return
      */
-    public static ListNode reverseList(ListNode head) {
+    public static ListNode  reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;
         while (curr != null) {
