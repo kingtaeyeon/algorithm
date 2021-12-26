@@ -6,13 +6,13 @@ public class ReverseListKGroup {
         ListNode nodeA = initLinkedList(a);
 
         ListNode d = null;
-        int testMethod = 1;
+        int testMethod = 2;
         switch (testMethod) {
             case 1://方法1：穿针引线法
                 d = reverseKGroup(nodeA, 3);
                 break;
             case 2://方法2：头插法+递归
-                d = reverseKGroup2(nodeA, 2);
+                d = reverseKGroup2(nodeA, 3);
                 break;
 
         }
