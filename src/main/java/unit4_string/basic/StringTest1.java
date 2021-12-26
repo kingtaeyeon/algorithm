@@ -22,7 +22,7 @@ public class StringTest1 {
         //从指定位置开始到指定位置结束截取字符串
         String c7 = str.substring(2, 4);
         System.out.println(length);
-        System.out.println(c1);
+        System.out.println("c1:"+c1);
         System.out.println(c2);
         System.out.println(c3);
         System.out.println(c4);

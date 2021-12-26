@@ -23,9 +23,9 @@ public class HelpEachOther {
         int[] score = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         Node head = initLinkedList(score);
 
-        Node newHead = helpEachOther(head);
+//        Node newHead = helpEachOther(head);
 //        这里应该输出 1 10 3 8 5 6 7 4 9 2
-        printList(newHead);
+        System.out.println(printList(head));
 
     }
 
