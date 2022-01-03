@@ -1,4 +1,4 @@
-package unit3_stack_quue_hash_cache.cache;
+package unit3_stack_queue_hash_cache.cache;
 
 import java.util.HashMap;
 import java.util.Map;

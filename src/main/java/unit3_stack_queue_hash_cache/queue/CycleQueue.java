@@ -1,4 +1,4 @@
-package unit3_stack_quue_hash_cache.queue;
+package unit3_stack_queue_hash_cache.queue;
 
 public class CycleQueue {
     private int maxSize;

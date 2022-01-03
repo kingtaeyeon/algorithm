@@ -19,6 +19,12 @@ public class GuPaoName {
 //
         String str1 = "wenwen tiantian yingzi rongrong";
 
+
+
+//  反转
+// 1  2 3 4
+
+
         //这里应该输出"wen~ tian~ yingzi rong~"
         System.out.println(compressName(str1));
 

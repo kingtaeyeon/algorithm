@@ -1,7 +1,6 @@
-package unit3_stack_quue_hash_cache.stack;
+package unit3_stack_queue_hash_cache.stack;
 
 import java.util.Arrays;
-import java.util.LinkedList;
 
 class Mystack<T> {
     //实现栈的数组
