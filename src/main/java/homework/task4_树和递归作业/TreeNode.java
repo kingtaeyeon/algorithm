@@ -1,4 +1,4 @@
-package homework.task4_树第一次作业;
+package homework.task4_树和递归作业;
 
 public class TreeNode {
     int val;

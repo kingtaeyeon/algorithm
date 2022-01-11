@@ -1,4 +1,4 @@
-package homework.task4_树第一次作业;
+package homework.task4_树和递归作业;
 
 
 public class BinaryTree {
@@ -21,19 +21,24 @@ public class BinaryTree {
         return node;
     }
 
-
+    /**
+     * 与1对称的新二叉树
+     *
+     * @return
+     */
     public TreeNode buildBinaryTree2() {
         TreeNode node = new TreeNode(3);
-        node.left = new TreeNode(9);
-        node.right = new TreeNode(20);
-        node.right.right = new TreeNode(7);
-        node.right.left = new TreeNode(15);
+        node.left = new TreeNode(20);
+        node.right = new TreeNode(9);
+        node.left.right = new TreeNode(15);
+        node.left.left = new TreeNode(7);
         return node;
 
     }
 
     /**
-     * 对称的二叉树
+     * 本身是对称的二叉树
+     *
      * @return
      */
     public TreeNode buildBinaryTree3() {

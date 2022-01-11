@@ -9,7 +9,7 @@ public class Invert {
     public static void main(String[] args) {
         BinaryTree bTree = new BinaryTree();
 //        bTree.root = bTree.buildBinaryTree();
-        bTree.root = bTree.buildBinaryTreeComplex();
+        bTree.root = bTree.buildBinaryTree();
 
         TreeNode result = null;
         //LeetCode101 对称二叉树
