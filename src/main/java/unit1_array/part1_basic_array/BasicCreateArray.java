@@ -1,8 +1,6 @@
-package unit1_array.ch1_basic_array;
+package unit1_array.part1_basic_array;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * 1.4 数组基本操作

@@ -1,4 +1,4 @@
-package unit1_array.ch1_basic_array;
+package unit1_array.part1_basic_array;
 
 public class BasicSearch {
     public static void main(String[] args) {
