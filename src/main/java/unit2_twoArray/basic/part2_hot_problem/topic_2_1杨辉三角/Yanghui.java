@@ -76,7 +76,6 @@ public class Yanghui {
                     numbers.add(triangle.get(row-1).get(column - 1) + triangle.get(row - 1).get(column));
                 }
             }
-
             triangle.add(numbers);
         }
 
