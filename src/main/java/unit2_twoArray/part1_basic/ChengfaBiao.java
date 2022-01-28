@@ -1,4 +1,4 @@
-package unit2_twoArray.basic.part1_basic;
+package unit2_twoArray.part1_basic;
 
 /**
  * 题目1：打印乘法口诀表

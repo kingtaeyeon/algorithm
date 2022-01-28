@@ -1,4 +1,4 @@
-package unit2_twoArray.basic.part2_hot_problem.topic_2_3_矩阵置零;
+package unit2_twoArray.part2_hot_problem.topic_2_3_矩阵置零;
 
 import java.util.Arrays;
 

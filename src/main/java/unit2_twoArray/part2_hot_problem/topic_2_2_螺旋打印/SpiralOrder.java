@@ -1,4 +1,4 @@
-package unit2_twoArray.basic.part2_hot_problem.topic_2_2_螺旋打印;
+package unit2_twoArray.part2_hot_problem.topic_2_2_螺旋打印;
 
 import java.util.ArrayList;
 
