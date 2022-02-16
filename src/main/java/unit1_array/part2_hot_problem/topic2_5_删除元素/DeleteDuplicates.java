@@ -5,7 +5,7 @@ package unit1_array.part2_hot_problem.topic2_5_删除元素;
  */
 public class DeleteDuplicates {
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 1, 2};
+        int[] arr = new int[]{1, 2, 3};
         int last = removeDuplicates(arr);
         for (int i = 0; i < last; i++) {
             System.out.print(arr[i] + "  ");

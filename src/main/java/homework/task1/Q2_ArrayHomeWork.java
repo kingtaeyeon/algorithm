@@ -1,8 +1,8 @@
-package homework;
+package homework.task1;
 
 import java.util.Arrays;
 
-public class Task1_ArrayHomeWork {
+public class Q2_ArrayHomeWork {
     /**
      * 第一次作业
      * 请设计一个算法，在单调数组中，将出现的重复元素一个都不要，例如

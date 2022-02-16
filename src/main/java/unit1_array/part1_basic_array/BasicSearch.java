@@ -4,7 +4,7 @@ public class BasicSearch {
     public static void main(String[] args) {
         int[] arr = new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10};
         //通过元素查找
-        int key = 2;
+        int key = 10;
         System.out.println("元素" + key + "的索引位置为：" + findByElement(arr, 9, key));
     }
 
