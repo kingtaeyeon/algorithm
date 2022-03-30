@@ -9,11 +9,11 @@ public class MergeKArray {
     public static void main(String[] args) {
 
         int[][] twoArray = initArray();
-        int[] a = MergeArrays(twoArray);
+        int[] a = mergeArrays(twoArray);
         System.out.println(Arrays.toString(a));
     }
 
-    public static int[] MergeArrays(int[][] array) {
+    public static int[] mergeArrays(int[][] array) {
         int arrNums = array.length, arrLen;
         if (arrNums == 0) {
             return new int[0];
@@ -30,7 +30,7 @@ public class MergeKArray {
         for (int i = 0; i < arrNums; i++)
             for (int j = 0; j < arrLen; j++)
                 result[i * arrLen + j] = array[i][j];
-        //排序一下完事
+        //排序一下
         Arrays.sort(result);
         return result;
     }

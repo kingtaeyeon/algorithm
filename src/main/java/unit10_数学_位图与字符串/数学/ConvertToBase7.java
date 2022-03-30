@@ -1,4 +1,4 @@
-package unit_math;
+package unit10_数学_位图与字符串.数学;
 
 public class ConvertToBase7 {
 
@@ -18,6 +18,7 @@ public class ConvertToBase7 {
         int a = 0;
         a=num%7;
         num=num/7;
+
         int i=1;
         while(num>0){
             a+=(num%7)*(int)Math.pow(10,i);
