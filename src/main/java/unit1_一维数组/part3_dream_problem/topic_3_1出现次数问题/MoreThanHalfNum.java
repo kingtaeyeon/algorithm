@@ -1,10 +1,11 @@
-package unit1_一维数组.part3_dream_problem.topic_3_2出现次数问题;
+package unit1_一维数组.part3_dream_problem.topic_3_1出现次数问题;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 问题1.数组中出现次数超过一半的数字
+ *  数组中只出现一次的数字
+ *  剑指offer题目，数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
  */
 public class MoreThanHalfNum {
     public static void main(String[] args) {
@@ -53,7 +54,6 @@ public class MoreThanHalfNum {
             else
                 times--;
         }
-        //检查是否符合
         times=0;
         for(int i=0;i<len;i++){
             if(array[i]==result)

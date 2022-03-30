@@ -2,15 +2,19 @@ package unit1_一维数组.part2_hot_problem.topic_2_6奇偶移动;
 
 import java.util.Arrays;
 
+/**
+ * LeetCode905，按奇偶排序数组。给定一个非负整数数组 `A`，返回一个数组，在该数组中， `A` 的所有偶数元素之后跟着所有奇数元素。
+ * 你可以返回满足此条件的任何数组作为答案。
+ */
 public class Division {
     public static void main(String[] args) {
         int[] arr = {3, 1, 2, 4};
         int test = 1;
         if (test == 2) {
-            //双指针
+            //双指针,不稳定的方法
             System.out.println(Arrays.toString(sortArrayByParity(arr)));
         } else {
-            //模仿冒泡排序
+            //模仿冒泡排序，稳定的方法
             System.out.println(Arrays.toString(reOrderArray(arr)));
         }
     }

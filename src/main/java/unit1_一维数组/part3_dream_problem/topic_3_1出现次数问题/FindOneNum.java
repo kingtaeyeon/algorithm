@@ -1,11 +1,9 @@
-package unit1_一维数组.part3_dream_problem.topic_3_2出现次数问题;
+package unit1_一维数组.part3_dream_problem.topic_3_1出现次数问题;
 
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * 问题2：数组中只出现一次的数字
- */
+
 public class FindOneNum {
     public static void main(String[] args) {
         int[] arr = {4, 1, 2, 1, 2};
@@ -14,7 +12,7 @@ public class FindOneNum {
     }
 
     /**
-     * 基于集合
+     * 基于集合寻找
      * @param arr
      * @return
      */

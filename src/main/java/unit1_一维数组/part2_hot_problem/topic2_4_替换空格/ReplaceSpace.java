@@ -6,7 +6,7 @@ package unit1_一维数组.part2_hot_problem.topic2_4_替换空格;
 public class ReplaceSpace {
     public static void main(String[] args) {
         StringBuffer sb = new StringBuffer("We are happy.");
-        System.out.println(replaceSpace1(sb));
+        System.out.println(replaceSpace2(sb));
     }
 
     /**
@@ -43,20 +43,20 @@ public class ReplaceSpace {
                 numOfblank++;
         }
         str.setLength(len + 2 * numOfblank); //设置长度
-        int oldIndex = len - 1;  //两个指针
-        int newIndex = (len + 2 * numOfblank) - 1;
+        int fast = len - 1;  //两个指针
+        int slow = (len + 2 * numOfblank) - 1;
 
-        while (oldIndex >= 0 && newIndex > oldIndex) {
-            char c = str.charAt(oldIndex);
+        while (fast >= 0 && slow > fast) {
+            char c = str.charAt(fast);
             if (c == ' ') {
-                oldIndex--;
-                str.setCharAt(newIndex--, '0');
-                str.setCharAt(newIndex--, '2');
-                str.setCharAt(newIndex--, '%');
+                fast--;
+                str.setCharAt(slow--, '0');
+                str.setCharAt(slow--, '2');
+                str.setCharAt(slow--, '%');
             } else {
-                str.setCharAt(newIndex, c);
-                oldIndex--;
-                newIndex--;
+                str.setCharAt(slow, c);
+                fast--;
+                slow--;
             }
         }
         return str.toString();

@@ -2,6 +2,9 @@ package unit1_一维数组.part2_hot_problem.topic_2_7轮转问题;
 
 import java.util.Arrays;
 
+/**
+ * LeetCode189.给你一个数组，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。
+ */
 public class Rotate {
 
     public static void main(String[] args) {
