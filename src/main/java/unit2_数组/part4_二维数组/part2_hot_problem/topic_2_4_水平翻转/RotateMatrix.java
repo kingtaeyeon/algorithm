@@ -1,4 +1,4 @@
-package unit2_数组.二维数组.part2_hot_problem.topic_2_4_水平翻转;
+package unit2_数组.part4_二维数组.part2_hot_problem.topic_2_4_水平翻转;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package unit2_数组.二维数组.part2_hot_problem.topic_2_1杨辉三角;
+package unit2_数组.part4_二维数组.part2_hot_problem.topic_2_1杨辉三角;
 
 import java.util.ArrayList;
 import java.util.List;

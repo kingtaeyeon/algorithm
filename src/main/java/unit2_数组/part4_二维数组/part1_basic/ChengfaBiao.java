@@ -1,4 +1,4 @@
-package unit2_数组.二维数组.part1_basic;
+package unit2_数组.part4_二维数组.part1_basic;
 
 /**
  * 题目1：打印乘法口诀表

@@ -1,4 +1,4 @@
-package unit2_数组.二维数组.part2_hot_problem.topic_2_2_螺旋打印;
+package unit2_数组.part4_二维数组.part2_hot_problem.topic_2_2_螺旋打印;
 
 import java.util.Arrays;
 

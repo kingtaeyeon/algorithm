@@ -1,4 +1,4 @@
-package unit2_数组.二维数组.part1_basic;
+package unit2_数组.part4_二维数组.part1_basic;
 
 public class Juzhen {
     public static void main(String args[]) {
