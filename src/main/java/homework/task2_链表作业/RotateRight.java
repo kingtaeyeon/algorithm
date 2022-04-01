@@ -1,4 +1,4 @@
-package homework.task2;
+package homework.task2_链表作业;
 
 /**
  * 第一题：通过三次反转实现链表旋转

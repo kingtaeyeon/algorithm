@@ -1,4 +1,4 @@
-package unit1_一维数组.part3_dream_problem.topic_3_3重复数字问题;
+package unit1_一维数组.part3_dream_problem.topic_3_2重复数字问题;
 
 import java.util.HashSet;
 import java.util.Set;

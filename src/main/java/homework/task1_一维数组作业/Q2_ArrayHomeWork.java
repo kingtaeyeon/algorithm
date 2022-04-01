@@ -1,4 +1,4 @@
-package homework.task1;
+package homework.task1_一维数组作业;
 
 import java.util.Arrays;
 
@@ -15,9 +15,8 @@ public class Q2_ArrayHomeWork {
      * 2.在下面removeAllDuplicate()中实现你的代码，其他代码不可以修改
      * 3.提交时将本文件后面添加上你的在算法课程里的编号，并将文件压缩后发给荣容.不知道编号的参考《编号列表》
      *     假如你是10号，那么提交的文件名就是：Task1_ArrayHomeWork_10.java，
-     *     然后压缩为Task1_ArrayHomeWork_10.zip,将该文件发送到荣荣邮箱（后续会通知）
-     *     如果不按照规定导致找不到你人，作业判0分
-     * 3.最晚提交时间2022年1月3日晚上12:00，之后要算法将进行第二阶段学习，为防止一直在纠结作业影响后续学习，逾期再提交的将作废
+     *     然后压缩为Task1_ArrayHomeWork_10.zip,将该文件发送到鹿鹿邮箱（qiyue@gupaoedu.com）
+     * 3.最晚提交时间2022年3月15日晚上12:00，
      * 4.请编写规范清晰，算法可运行，如果因为不规范,个人原因不能执行等原因要找你，每找一次扣5分。
      * 5.造题不易，一切为了你学习，题目请不要随意外泄
      * <p>

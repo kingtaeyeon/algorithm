@@ -1,4 +1,4 @@
-package homework.task3;
+package homework.task3_队列Hash与设计问题作业;
 
 /**
  * 在咕泡有很多小姐姐,她们给我们的学习增加了很多快乐，
