@@ -1,85 +1,79 @@
-package unit3_链表就这些题.part2_hot_problem.hasCycle;
+package unit3_链表就这些题.part2_hot_problem.topic2_5删除元素;
 
-import java.util.HashSet;
-import java.util.Set;
 
-public class HasCycle {
+public class DeleteDuplatePoint {
     /**
-     * 是否存在环
+     * 删除重复元素的问题
      *
      * @param args
      */
     public static void main(String[] args) {
-        int[] a = {1, 2, 3, 4, 5, 6};
-        ListNode nodeA = null;
-
-        //构造链表是否存在环
-        int isCycle = 2;
-        switch (isCycle) {
-            case 1://构造的链表中存在环
-                nodeA = initLinkedListHasCycle(a);
-                break;
-            case 2://构造的链表中部不存在环
-                nodeA = initLinkedList(a);
-                break;
-        }
-
-
-        //测试哪个方法
-        int testmethod = 2;
-        boolean result = false;
-        switch (testmethod) {
-            case 1:
-                result = hasCycleByMap(nodeA);
+        int[] a = {1, 2, 3, 3, 4, 4, 5};
+        ListNode nodeA = initLinkedList(a);
+        int testMethod = 2;
+        ListNode result = null;
+        switch (testMethod) {
+            case 1://重复元素保留一个
+                result = deleteDuplicate(nodeA);
                 break;
             case 2:
-                result = hasCycleByTwoPoint(nodeA);
+                result = deleteDuplicates(nodeA);
                 break;
         }
 
-        System.out.println(result);
+        System.out.println(toString(result));
+
 
     }
 
     /**
-     * 方法1：通过HashMap或者实现
+     * 重复元素保留一个
      *
      * @param head
      * @return
      */
-    public static boolean hasCycleByMap(ListNode head) {
-        Set<ListNode> seen = new HashSet<ListNode>();
-        while (head != null) {
-            if (!seen.add(head)) {
-                return true;
+    public static ListNode deleteDuplicate(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        ListNode cur = head;
+        while (cur.next != null) {
+            if (cur.val == cur.next.val) {
+                cur.next = cur.next.next;
+            } else {
+                cur = cur.next;
             }
-            head = head.next;
         }
-        return false;
+        return head;
     }
 
     /**
-     * 方法2 通过双指针实现
+     * 重复元素都不要
      *
      * @param head
      * @return
      */
+    public static ListNode deleteDuplicates(ListNode head) {
+        if (head == null) {
+            return head;
+        }
 
-    public static boolean hasCycleByTwoPoint(ListNode head) {
-        if (head == null || head.next == null) {
-            return false;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode cur = dummy;
+        while (cur.next != null && cur.next.next != null) {
+            if (cur.next.val == cur.next.next.val) {
+                int x = cur.next.val;
+                while (cur.next != null && cur.next.val == x) {
+                    cur.next = cur.next.next;
+                }
+            } else {
+                cur = cur.next;
+            }
         }
-        ListNode fast = head;
-        ListNode slow = head;
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-            if (fast == slow)
-                return true;
-        }
-        return false;
+
+        return dummy.next;
     }
-
 
     /**
      * 初始化链表

@@ -1,78 +1,59 @@
-package unit3_链表就这些题.part2_hot_problem.delete;
+package unit3_链表就这些题.part2_hot_problem.topic2_5删除元素;
 
 
-public class DeleteDuplatePoint {
+public class DeletePoint {
     /**
-     * 删除重复元素的问题
+     * 删除给定的结点
      *
      * @param args
      */
     public static void main(String[] args) {
-        int[] a = {1, 2, 3, 3, 4, 4, 5};
+        int[] a = {4, 4, 5, 1, 9, 9};
         ListNode nodeA = initLinkedList(a);
         int testMethod = 2;
-        ListNode result = null;
         switch (testMethod) {
-            case 1://重复元素保留一个
-                result = deleteDuplicate(nodeA);
+            case 1://LeetCode 237 删除给定结点
+                deleteTargetNode(nodeA.next);
                 break;
-            case 2:
-                result = deleteDuplicates(nodeA);
+            case 2://LeetCode203 删除指定值的结点
+                removeElements(nodeA, 9);
                 break;
         }
 
-        System.out.println(toString(result));
+        System.out.println(toString(nodeA));
 
 
     }
 
     /**
-     * 重复元素保留一个
+     * 删除给定的结点
      *
-     * @param head
-     * @return
+     * @param node
      */
-    public static ListNode deleteDuplicate(ListNode head) {
-        if (head == null) {
-            return head;
-        }
-        ListNode cur = head;
-        while (cur.next != null) {
-            if (cur.val == cur.next.val) {
-                cur.next = cur.next.next;
-            } else {
-                cur = cur.next;
-            }
-        }
-        return head;
+    public static void deleteTargetNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 
     /**
-     * 重复元素都不要
+     * 删除特定值的结点
      *
      * @param head
+     * @param val
      * @return
      */
-    public static ListNode deleteDuplicates(ListNode head) {
-        if (head == null) {
-            return head;
-        }
-
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode cur = dummy;
-        while (cur.next != null && cur.next.next != null) {
-            if (cur.next.val == cur.next.next.val) {
-                int x = cur.next.val;
-                while (cur.next != null && cur.next.val == x) {
-                    cur.next = cur.next.next;
-                }
+    public static ListNode removeElements(ListNode head, int val) {
+        ListNode dummyHead = new ListNode(0);
+        dummyHead.next = head;
+        ListNode temp = dummyHead;
+        while (temp.next != null) {
+            if (temp.next.val == val) {
+                temp.next = temp.next.next;
             } else {
-                cur = cur.next;
+                temp = temp.next;
             }
         }
-
-        return dummy.next;
+        return dummyHead.next;
     }
 
     /**

@@ -1,7 +1,8 @@
 package unit3_链表就这些题.part1_basicLinkList;
 
 /**
- * 构造链表，使用静态内部类定表示结点
+ * 构造链表，使用静态内部类定表示结点，实现增加和删除元素的功能
+ *
  */
 public class BasicLinkList {
     static class Node {

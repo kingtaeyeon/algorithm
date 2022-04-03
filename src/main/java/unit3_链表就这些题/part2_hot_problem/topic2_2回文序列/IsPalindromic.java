@@ -1,9 +1,9 @@
-package unit3_链表就这些题.part2_hot_problem;
+package unit3_链表就这些题.part2_hot_problem.topic2_2回文序列;
 
 import java.util.Stack;
 
 /***
- * 回文
+ * 判断链表是否回文
  */
 public class IsPalindromic {
     static ListNode temp;
@@ -31,21 +31,6 @@ public class IsPalindromic {
         System.out.println("result:" + result);
     }
 
-    private static ListNode initLinkedList(int[] array) {
-        ListNode head = null, cur = null;
-        for (int i = 0; i < array.length; i++) {
-            ListNode newNode = new ListNode(array[i]);
-            newNode.next = null;
-            if (i == 0) {
-                head = newNode;
-                cur = head;
-            } else {
-                cur.next = newNode;
-                cur = newNode;
-            }
-        }
-        return head;
-    }
 
     /**
      * 方法1：通过双指针的方式来判断
@@ -140,6 +125,23 @@ public class IsPalindromic {
     public static boolean isPalindromeByRe(ListNode head) {
         temp = head;
         return check(head);
+    }
+
+
+    private static ListNode initLinkedList(int[] array) {
+        ListNode head = null, cur = null;
+        for (int i = 0; i < array.length; i++) {
+            ListNode newNode = new ListNode(array[i]);
+            newNode.next = null;
+            if (i == 0) {
+                head = newNode;
+                cur = head;
+            } else {
+                cur.next = newNode;
+                cur = newNode;
+            }
+        }
+        return head;
     }
 
     private static boolean check(ListNode head) {

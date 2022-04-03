@@ -1,4 +1,4 @@
-package unit3_链表就这些题.part2_hot_problem.delete;
+package unit3_链表就这些题.part2_hot_problem.topic2_5删除元素;
 
 
 import java.util.Deque;

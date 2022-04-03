@@ -1,60 +1,100 @@
-package unit3_链表就这些题.part2_hot_problem.delete;
+package unit3_链表就这些题.part2_hot_problem.topic2_4双指针.hasCycle;
 
+import java.util.HashSet;
+import java.util.Set;
 
-public class DeletePoint {
+public class HasCycleAndFindEntrance {
     /**
-     * 删除给定的结点
+     * 是否存在环,如果存在环，要返回入口
      *
      * @param args
      */
     public static void main(String[] args) {
-        int[] a = {4, 4, 5, 1, 9, 9};
-        ListNode nodeA = initLinkedList(a);
-        int testMethod = 2;
-        switch (testMethod) {
-            case 1://LeetCode 237 删除给定结点
-                deleteTargetNode(nodeA.next);
+        int[] a = {1, 2, 3, 4, 5, 6};
+        ListNode nodeA = null;
+
+        //构造链表是否存在环
+        int isCycle = 1;
+        switch (isCycle) {
+            case 1://构造的链表中存在环
+                nodeA = initLinkedListHasCycle(a);
                 break;
-            case 2://LeetCode203 删除指定值的结点
-                removeElements(nodeA, 9);
+            case 2://构造的链表中部存在环
+                nodeA = initLinkedList(a);
                 break;
         }
 
-        System.out.println(toString(nodeA));
 
+        //测试哪个方法
+        int testmethod = 2;
+        ListNode result = null;
+        switch (testmethod) {
+            case 1:
+                result = detectCycleByMap(nodeA);
+                break;
+            case 2:
+                result = detectCycleByTwoPoint(nodeA);
+                break;
+        }
+
+        System.out.println(result.val);
 
     }
 
     /**
-     * 删除给定的结点
-     *
-     * @param node
-     */
-    public static void deleteTargetNode(ListNode node) {
-        node.val = node.next.val;
-        node.next = node.next.next;
-    }
-
-    /**
-     * 删除特定值的结点
+     * 方法1：通过HashMap或者实现
      *
      * @param head
-     * @param val
      * @return
      */
-    public static ListNode removeElements(ListNode head, int val) {
-        ListNode dummyHead = new ListNode(0);
-        dummyHead.next = head;
-        ListNode temp = dummyHead;
-        while (temp.next != null) {
-            if (temp.next.val == val) {
-                temp.next = temp.next.next;
+    public static ListNode detectCycleByMap(ListNode head) {
+        ListNode pos = head;
+        Set<ListNode> visited = new HashSet<ListNode>();
+        while (pos != null) {
+            if (visited.contains(pos)) {
+                return pos;
             } else {
-                temp = temp.next;
+                visited.add(pos);
+            }
+            pos = pos.next;
+        }
+        return null;
+    }
+
+
+
+    /**
+     * 方法2 通过双指针实现
+     *
+     * @param head
+     * @return
+     */
+
+    public static ListNode detectCycleByTwoPoint(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode slow = head, fast = head;
+        while (fast != null) {
+            slow = slow.next;
+            if (fast.next != null) {
+                fast = fast.next.next;
+            } else {
+                return null;
+            }
+            if (fast == slow) {
+                ListNode ptr = head;
+                while (ptr != slow) {
+                    ptr = ptr.next;
+                    slow = slow.next;
+                }
+                return ptr;
             }
         }
-        return dummyHead.next;
+        return null;
     }
+
+
 
     /**
      * 初始化链表

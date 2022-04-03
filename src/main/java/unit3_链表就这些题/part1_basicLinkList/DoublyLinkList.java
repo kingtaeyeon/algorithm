@@ -7,6 +7,38 @@ public class DoublyLinkList {
         first = null;
         last = first;
     }
+
+    /**
+     * 创建和测试双向链表
+     *
+     */
+
+    public static void main(String[] args) {
+        DoublyLinkList theList = new DoublyLinkList();
+        theList.insertFirst(20);
+        theList.insertFirst(40);
+        theList.insertFirst(60);
+        theList.insertLast(10);
+        theList.insertLast(30);
+        theList.insertLast(50);
+
+        theList.displayForward();
+        theList.displayBackward();
+
+        theList.deleteFirst();
+        theList.deleteLast();
+        theList.deleteKey(10);
+
+        theList.displayForward();
+
+        theList.insertAfter(20, 70);
+        theList.insertAfter(30, 80);
+
+        theList.displayForward();
+        theList.displayBackward();
+    }
+
+
     //头部插入
     public void insertFirst(int data) {
         DoubleNode newDoubleNode = new DoubleNode(data);
@@ -137,33 +169,22 @@ public class DoublyLinkList {
     }
 
     /**
-     * 测试双向链表
-     * @author Administrator
+     * 创建双向链表结点
      */
 
-    public static void main(String[] args) {
-        DoublyLinkList theList = new DoublyLinkList();
-        theList.insertFirst(20);
-        theList.insertFirst(40);
-        theList.insertFirst(60);
-        theList.insertLast(10);
-        theList.insertLast(30);
-        theList.insertLast(50);
+     class DoubleNode {
+        public int data;    //数据域
+        public DoubleNode next;    //指向下一个结点
+        public DoubleNode prev;
 
-        theList.displayForward();
-        theList.displayBackward();
+        public DoubleNode(int data) {
+            this.data = data;
+        }
 
-        theList.deleteFirst();
-        theList.deleteLast();
-        theList.deleteKey(10);
-
-        theList.displayForward();
-
-        theList.insertAfter(20, 70);
-        theList.insertAfter(30, 80);
-
-        theList.displayForward();
-        theList.displayBackward();
+        //打印结点的数据域
+        public void displayNode() {
+            System.out.print("{" + data + "} ");
+        }
     }
 
 

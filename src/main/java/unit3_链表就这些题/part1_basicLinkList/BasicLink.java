@@ -1,6 +1,8 @@
 package unit3_链表就这些题.part1_basicLinkList;
 
-
+/**
+ * 一个简单的链表实例，用于演示JVM怎么构造链表的
+ */
 public class BasicLink {
 
     public static void main(String[] args) {

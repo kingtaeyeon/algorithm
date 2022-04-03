@@ -1,11 +1,11 @@
-package unit3_链表就这些题.part2_hot_problem.hasCycle;
+package unit3_链表就这些题.part2_hot_problem.topic2_4双指针.hasCycle;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class HasCycleAndFindEntrance {
+public class HasCycle {
     /**
-     * 是否存在环,如果存在环，要返回入口
+     * 判断是否存在环
      *
      * @param args
      */
@@ -14,12 +14,12 @@ public class HasCycleAndFindEntrance {
         ListNode nodeA = null;
 
         //构造链表是否存在环
-        int isCycle = 1;
+        int isCycle = 2;
         switch (isCycle) {
             case 1://构造的链表中存在环
                 nodeA = initLinkedListHasCycle(a);
                 break;
-            case 2://构造的链表中部存在环
+            case 2://构造的链表中部不存在环
                 nodeA = initLinkedList(a);
                 break;
         }
@@ -27,41 +27,36 @@ public class HasCycleAndFindEntrance {
 
         //测试哪个方法
         int testmethod = 2;
-        ListNode result = null;
+        boolean result = false;
         switch (testmethod) {
             case 1:
-                result = detectCycleByMap(nodeA);
+                result = hasCycleByMap(nodeA);
                 break;
             case 2:
-                result = detectCycleByTwoPoint(nodeA);
+                result = hasCycleByTwoPoint(nodeA);
                 break;
         }
 
-        System.out.println(result.val);
+        System.out.println(result);
 
     }
 
     /**
-     * 方法1：通过HashMap或者实现
+     * 方法1：通过HashMap判断
      *
      * @param head
      * @return
      */
-    public static ListNode detectCycleByMap(ListNode head) {
-        ListNode pos = head;
-        Set<ListNode> visited = new HashSet<ListNode>();
-        while (pos != null) {
-            if (visited.contains(pos)) {
-                return pos;
-            } else {
-                visited.add(pos);
+    public static boolean hasCycleByMap(ListNode head) {
+        Set<ListNode> seen = new HashSet<ListNode>();
+        while (head != null) {
+            if (!seen.add(head)) {
+                return true;
             }
-            pos = pos.next;
+            head = head.next;
         }
-        return null;
+        return false;
     }
-
-
 
     /**
      * 方法2 通过双指针实现
@@ -70,30 +65,20 @@ public class HasCycleAndFindEntrance {
      * @return
      */
 
-    public static ListNode detectCycleByTwoPoint(ListNode head) {
-        if (head == null) {
-            return null;
+    public static boolean hasCycleByTwoPoint(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
         }
-        ListNode slow = head, fast = head;
-        while (fast != null) {
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
             slow = slow.next;
-            if (fast.next != null) {
-                fast = fast.next.next;
-            } else {
-                return null;
-            }
-            if (fast == slow) {
-                ListNode ptr = head;
-                while (ptr != slow) {
-                    ptr = ptr.next;
-                    slow = slow.next;
-                }
-                return ptr;
-            }
+            if (fast == slow)
+                return true;
         }
-        return null;
+        return false;
     }
-
 
 
     /**

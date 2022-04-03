@@ -1,7 +1,10 @@
-package unit3_链表就这些题.part2_hot_problem.use_of_reverse;
+package unit3_链表就这些题.part3_reverseList.topic3_5链表反转的应用;
 
 import java.util.Stack;
 
+/**
+ * 两个链表相加
+ */
 public class ReverseList_AddList {
     public static void main(String[] args) {
         int[] a = {9, 3, 7};

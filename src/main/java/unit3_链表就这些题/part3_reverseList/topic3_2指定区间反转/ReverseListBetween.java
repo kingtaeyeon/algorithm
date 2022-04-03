@@ -1,4 +1,4 @@
-package unit3_链表就这些题.part2_hot_problem.reverse;
+package unit3_链表就这些题.part3_reverseList.topic3_2指定区间反转;
 
 public class ReverseListBetween {
     public static void main(String[] args) {

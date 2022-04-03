@@ -1,4 +1,4 @@
-package unit3_链表就这些题.part2_hot_problem;
+package unit3_链表就这些题.part2_hot_problem.topic2_3合并有序链表;
 
 public class MergeList {
     public static void main(String[] args) {
@@ -10,25 +10,25 @@ public class MergeList {
         ListNode nodeC = initLinkedList(c);
         ListNode[] array = {nodeA, nodeB, nodeC};
         ListNode d = null;
-        int testMethod = 2;
+
         int[] e = {1, 2, 3, 4, 5, 6};
         ListNode nodeD = initLinkedList(e);
         System.out.println(middleNode(nodeD).val);
 
-//
-//        switch (testMethod) {
-//            case 1://最直接的方法
-//                d = mergeTwoLists2(nodeA, nodeB);
-//                break;
-//            case 2://简化方法1中的方法
-//                d = mergeTwoListsMoreSimple(nodeA, nodeB);
-//                break;
-//            case 3://通过递归方式来实现
-//                d = mergeTwoListsByRe(nodeA, nodeB);
-//                break;
-//            case 4://测试K个链表合并
-//                d = mergeKLists(array);
-//        }
+        int testMethod = 2;
+        switch (testMethod) {
+            case 1://最直接的方法
+                d = mergeTwoLists2(nodeA, nodeB);
+                break;
+            case 2://简化方法1中的方法
+                d = mergeTwoListsMoreSimple(nodeA, nodeB);
+                break;
+            case 3://通过递归方式来实现
+                d = mergeTwoListsByRe(nodeA, nodeB);
+                break;
+            case 4://测试K个链表合并
+                d = mergeKLists(array);
+        }
 
 
         System.out.println(toString(d));

@@ -1,4 +1,4 @@
-package unit3_链表就这些题.part2_hot_problem;
+package unit3_链表就这些题.part2_hot_problem.topic2_1第一个公共结点;
 
 import java.util.HashMap;
 import java.util.HashSet;
