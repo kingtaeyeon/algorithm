@@ -3,9 +3,11 @@ package homework.task2_链表作业;
 public class HasCycleAndFindEntrance {
     /**
      * 第一题：
-     * 三次使用双指针，确定是否环的入口
-     *
-     * @param args
+     * 在讲义2.4.4.1 三次双指针法部分，我们介绍了三次使用双指针，来确定是否环的入口的方法
+     * 现在请你实现这个功能
+     * 要求：
+     * 1.你只需要定义两个指针slow和fast就可以了，第二次第三次使用时可以复用
+     * 2.代码必须能运行，否则视为0分
      */
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4, 5, 6};
