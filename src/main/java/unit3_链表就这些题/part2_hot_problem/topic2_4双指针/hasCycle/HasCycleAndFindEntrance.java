@@ -19,7 +19,7 @@ public class HasCycleAndFindEntrance {
             case 1://构造的链表中存在环
                 nodeA = initLinkedListHasCycle(a);
                 break;
-            case 2://构造的链表中部存在环
+            case 2://构造的链表中不存在环
                 nodeA = initLinkedList(a);
                 break;
         }
@@ -127,7 +127,7 @@ public class HasCycleAndFindEntrance {
      */
     private static ListNode initLinkedListHasCycle(int[] array) {
         ListNode head = null, cur = null;
-        ListNode corss = null;
+        ListNode cross = null;
         for (int i = 0; i < array.length; i++) {
             ListNode newNode = new ListNode(array[i]);
             newNode.next = null;
@@ -139,12 +139,12 @@ public class HasCycleAndFindEntrance {
                 cur = newNode;
                 //找到中间位置结点
                 if (i == array.length / 2) {
-                    corss = cur;
+                    cross = cur;
                 }
             }
         }
         //制造环
-        cur.next = corss;
+        cur.next = cross;
         return head;
     }
 
