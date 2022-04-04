@@ -14,18 +14,18 @@ public class BasicAddByElement {
         int size = 4;//数组中已有元素的数量
 
         //测试中间位置插入元素
-        addByElementSequence(arr, size, 6);
+        addByElementSequence(arr, size, 19);
         printList("通过元素顺序插入", arr, 5);
 
-        //在上面基础上继续测试,尾部位置插入元素
-        size = size + 1;
-        addByElementSequence(arr, size, 9);
-        printList("通过元素顺序，尾部插入", arr, 6);
-
-        //在上面基础上继续测试，首部位置插入元素
-        size = size + 1;
-        addByElementSequence(arr, size, 0);
-        printList("通过元素顺序，尾部插入", arr, 7);
+//        //在上面基础上继续测试,尾部位置插入元素
+//        size = size + 1;
+//        addByElementSequence(arr, size, 9);
+//        printList("通过元素顺序，尾部插入", arr, 6);
+//
+//        //在上面基础上继续测试，首部位置插入元素
+//        size = size + 1;
+//        addByElementSequence(arr, size, 0);
+//        printList("通过元素顺序，尾部插入", arr, 7);
     }
 
     /**
