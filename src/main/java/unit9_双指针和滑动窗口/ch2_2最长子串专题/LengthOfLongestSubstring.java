@@ -7,7 +7,7 @@ import java.util.Set;
 public class LengthOfLongestSubstring {
     public static void main(String[] args) {
 
-        String s = "abcabcbb";
+        String s = "abba";
 //        String s = "au";
 //        String s = " ";
         System.out.println(lengthOfLongestSubstring(s));
@@ -15,6 +15,21 @@ public class LengthOfLongestSubstring {
     }
 
     public static int lengthOfLongestSubstring(String s) {
+        if (s.length() == 0) return 0;
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        int max = 0;
+        int left = 0;
+        for (int right = 0; right < s.length(); right++) {
+            if (map.containsKey(s.charAt(right))) {
+                left = Math.max(left, map.get(s.charAt(right))+1);
+            }
+            map.put(s.charAt(right), right);
+            max = Math.max(max, right - left + 1);
+        }
+        return max;
+    }
+
+    public static int lengthOfLongestSubstring2(String s) {
         if (s.length() <= 1) {
             return s.length();
         }
@@ -38,18 +53,5 @@ public class LengthOfLongestSubstring {
 
     }
 
-    public static int lengthOfLongestSubstring2(String s) {
-        if (s.length() == 0) return 0;
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-        int max = 0;
-        int left = 0;
-        for (int right = 0; right < s.length(); right++) {
-            if (map.containsKey(s.charAt(right))) {
-                left = Math.max(left, map.get(s.charAt(right)) + 1);
-            }
-            map.put(s.charAt(right), right);
-            max = Math.max(max, right - left + 1);
-        }
-        return max;
-    }
+
 }
