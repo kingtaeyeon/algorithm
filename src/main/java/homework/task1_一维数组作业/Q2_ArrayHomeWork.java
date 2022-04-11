@@ -22,7 +22,20 @@ public class Q2_ArrayHomeWork {
      */
     public static void removeAllDuplicate(int[] arr) {
         //todo  这里实现你的算法
-
+        int slow = 0, fast = 1;
+        boolean isMove = true;
+        while (fast < arr.length) {
+            if (arr[slow] == arr[fast]) {
+                isMove = false;
+            } else {
+                if (isMove) {
+                    slow++;
+                }
+                arr[slow] = arr[fast];
+                isMove = true;
+            }
+            fast++;
+        }
     }
 
     public static void main(String[] args) {
