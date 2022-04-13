@@ -28,4 +28,24 @@ public class BasicSearch {
         return -1;
     }
 
+    /***
+     * 如果数组是递增的，此时查找时如果相等或者当前位置元素⽐⽬标值更⼤就停下了
+     * @Author: LiHao
+     * @param arr
+     * @param size 已经存放的元素容量
+     * @param key  待查找的元素
+     * @return
+     * @Since: 2022/4/13 23:05
+     */
+    public static int findByElementInContinuousArray(int[] arr, int size, int key) {
+        for (int i = 0; i < size; i++) {
+            if (arr[i] == key)
+                return i;
+            if (key > arr[i]) {
+                return -1;
+            }
+        }
+        return -1;
+    }
+
 }

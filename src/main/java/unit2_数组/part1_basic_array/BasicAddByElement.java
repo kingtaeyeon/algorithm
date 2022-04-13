@@ -14,7 +14,7 @@ public class BasicAddByElement {
         int size = 4;//数组中已有元素的数量
 
         //测试中间位置插入元素
-        addByElementSequence(arr, size, 19);
+        addInMoving(arr, size, 9);
         printList("通过元素顺序插入", arr, 5);
 
 //        //在上面基础上继续测试,尾部位置插入元素
@@ -52,6 +52,62 @@ public class BasicAddByElement {
         }
         arr[index] = element;//插入数据
         return index;
+    }
+
+    /**
+     * 解法1：
+     * 将给定的元素插⼊到有序数组的对应位置中，我们可以先找位置，再将其后元素整体右移，最后插⼊到空位置上。
+     * 这⾥需要注意，算法必须能保证在数组的⾸部、尾部和中间位置插⼊都可以成功
+     * @param arr
+     * @param size    数组已经存储的元素数量
+     * @param element 待插入的元素元素
+     * @return
+     * @Author: LiHao 
+     * @Since: 2022/4/13 23:14
+     */
+    public static int test(int[] arr, int size, int element) {
+        
+        if (size >= arr.length)
+            throw new IllegalArgumentException("length not enough");
+        int index = size;
+        for (int i = 0; i < size; i++) {
+            if (element < arr[i])
+                index = i;
+            break;
+        }
+        for (int j = size; j > index; j--) {
+            arr[j] = arr[j - 1];
+        }
+        arr[index] = element;
+        return index;
+     }
+
+
+    /**
+     * 解法2：
+     * 将给定的元素插⼊到有序数组的对应位置中，我们可以先找位置，再将其后元素整体右移，最后插⼊到空位置上。
+     * 这⾥需要注意，算法必须能保证在数组的⾸部、尾部和中间位置插⼊都可以成功
+     * 从后向前⼀边移动⼀边对⽐查找，找到位置直接插⼊
+     * @param arr
+     * @param size    数组已经存储的元素数量
+     * @param element 待插入的元素元素
+     * @return
+     * @Author: LiHao
+     * @Since: 2022/4/13 23:14
+     */
+    public static int addInMoving(int[] arr, int size, int element) {
+
+       if (size >= arr.length)
+           throw new IllegalArgumentException("length not enough");
+       for (int i = size; i > 0; i--) {
+           if (element >= arr[i - 1]) {
+               arr[i] = element;
+               return i;
+           }
+           arr[i] = arr[i - 1];
+       }
+       arr[0] = element;
+       return 0;
     }
 
     /**
