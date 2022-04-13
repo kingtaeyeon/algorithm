@@ -1,4 +1,4 @@
-package homework.task1_一维数组作业;
+package homework.task1_array;
 
 public class Q1_BasicAddByElement {
     /**

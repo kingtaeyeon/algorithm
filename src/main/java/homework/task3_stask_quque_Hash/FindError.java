@@ -1,4 +1,4 @@
-package homework.task3_队列Hash与设计问题作业;
+package homework.task3_stask_quque_Hash;
 
 /**
  * 讲义2.2 第5题 LeetCode.557. 反转字符串中的单词 III

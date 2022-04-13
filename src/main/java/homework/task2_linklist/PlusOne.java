@@ -1,4 +1,4 @@
-package homework.task2_链表作业;
+package homework.task2_linklist;
 
 /**
  * 第二题
