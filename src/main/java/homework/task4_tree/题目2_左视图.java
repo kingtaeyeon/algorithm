@@ -1,4 +1,4 @@
-package homework.task4_递归和树作业;
+package homework.task4_tree;
 
 
 import java.util.List;

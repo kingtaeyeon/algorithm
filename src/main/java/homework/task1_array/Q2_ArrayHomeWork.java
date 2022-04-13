@@ -1,11 +1,11 @@
-package homework.task1_一维数组作业;
+package homework.task1_array;
 
 import java.util.Arrays;
 
 public class Q2_ArrayHomeWork {
     /**
      * 第二次作业
-     * 请设计一个算法，在单调数组中，将出现的重复元素一个都不要，例如
+     * 在讲义2.5.2中，我们介绍了删除元素的一种情况，现在请你设计一个算法，在单调数组中，将出现的重复元素一个都不要。
      * 示例1：
      * 原始数组为[1，1，2，2，3，4，5]，由于1，2存在重复，所以数组变成[3,4,5]
      * 示例2：
