@@ -30,12 +30,11 @@ public class Q2_ArrayHomeWork {
         int[] arr1 = {1, 1, 2, 2, 3, 4, 5};
         removeAllDuplicate(arr1);
         // 此时arr1的前三个元素为[3 4 5]
-
+        System.out.println(Arrays.toString(arr1));
         int[] arr2 = {0, 2, 2, 2, 2, 2, 5};
+
         removeAllDuplicate(arr2);
         //此时arr2的前两个元素为[0 5]
-
-        System.out.println(Arrays.toString(arr1));
         System.out.println(Arrays.toString(arr2));
     }
 
