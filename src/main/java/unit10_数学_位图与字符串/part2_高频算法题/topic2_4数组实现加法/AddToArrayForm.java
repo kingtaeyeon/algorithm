@@ -1,10 +1,10 @@
-package unit10_数学_位图与字符串.part2_数学.topic_3_1加法;
+package unit10_数学_位图与字符串.part2_高频算法题.topic2_4数组实现加法;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class AddToArrayForm数组加数字 {
+public class AddToArrayForm {
     public static void main(String[] args) {
         int[] arr = {1, 2, 0, 0};
         int k = 34;

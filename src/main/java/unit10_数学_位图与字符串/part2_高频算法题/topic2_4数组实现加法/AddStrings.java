@@ -1,6 +1,6 @@
-package unit10_数学_位图与字符串.part2_数学.topic_3_1加法;
+package unit10_数学_位图与字符串.part2_高频算法题.topic2_4数组实现加法;
 
-public class AddStrings字符串相加 {
+public class AddStrings {
     public static void main(String[] args) {
         String num1 = "456", num2 = "77";
         System.out.println(addStrings(num1, num2));

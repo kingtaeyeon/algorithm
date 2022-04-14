@@ -1,6 +1,6 @@
-package unit10_数学_位图与字符串.part2_数学.topic_3_1加法;
+package unit10_数学_位图与字符串.part2_高频算法题.topic2_4数组实现加法;
 
-public class AddBinary二进制加 {
+public class AddBinary {
     public static void main(String[] args) {
         String a = "1010", b = "1011";
         System.out.println(addBinary(a, b));
