@@ -9,16 +9,20 @@ public class DeleteVal {
     public static void main(String[] args) {
         int[] arr = {3, 2, 2, 3, 3};
         int test = 0;
-        if (test == 1) {
+
+        if (test == 1) {//快慢指针
             System.out.println(removeElement(arr, 3));
-        } else {
+        } else if (test==2){//标准的双指针
             System.out.println(removeElement2(arr, 2));
+        }else{//优化的双指针
+            System.out.println(removeElement3(arr, 3));
         }
 
     }
 
     /**
      * 方法1：使用快慢型双指针
+     *
      * @param nums
      * @param val
      * @return
@@ -37,15 +41,47 @@ public class DeleteVal {
 
     /**
      * 方法2：使用对撞型双指针
+     *
      * @param nums
      * @param val
      * @return
      */
+
+
     public static int removeElement2(int[] nums, int val) {
-        int right = nums.length;
+        int right = nums.length - 1;
+        int left = 0;
+
+        for (left = 0; left <= right; ) {
+            if ((nums[left] == val) && (nums[right] != val)) {
+                int tmp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = tmp;
+
+            }
+
+            if (nums[left] != val) {
+                left++;
+            }
+            if (nums[right] == val){
+                right--;
+            }
+
+        }
+        return left ;
+    }
+
+    /**
+     * 方法三：优化对撞型双指针
+     * @param nums
+     * @param val
+     * @return
+     */
+    public static int removeElement3(int[] nums, int val) {
+        int right = nums.length-1;
         for (int left = 0; left < right; ) {
             if (nums[left] == val) {
-                nums[left] = nums[right - 1];
+                nums[left] = nums[right ];
                 right--;
             } else {
                 left++;
