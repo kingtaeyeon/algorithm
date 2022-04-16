@@ -1,4 +1,4 @@
-package unit10_数学_位图与字符串.part2_高频算法题.topic2_8只出现一次的数字;
+package unit10_数学_位图与字符串.part2_高频算法题.topic2_7只出现一次的数字;
 
 public class SingleNumber {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package unit10_数学_位图与字符串.part2_高频算法题.topic2_7幂运算;
+package unit10_数学_位图与字符串.part2_高频算法题.topic2_6幂运算;
 
 public class IsPowerOfFour {
     public static void main(String[] args) {

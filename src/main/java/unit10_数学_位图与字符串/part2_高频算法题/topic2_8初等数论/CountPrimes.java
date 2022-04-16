@@ -1,4 +1,4 @@
-package unit10_数学_位图与字符串.part2_高频算法题.topic2_6初等数论;
+package unit10_数学_位图与字符串.part2_高频算法题.topic2_8初等数论;
 
 import java.util.Arrays;
 
