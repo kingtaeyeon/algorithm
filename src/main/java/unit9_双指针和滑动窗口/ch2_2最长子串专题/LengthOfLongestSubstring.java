@@ -7,7 +7,7 @@ import java.util.Set;
 public class LengthOfLongestSubstring {
     public static void main(String[] args) {
 
-        String s = "abba";
+        String s = "aabbbccdeebcss";
 //        String s = "au";
 //        String s = " ";
         System.out.println(lengthOfLongestSubstring(s));

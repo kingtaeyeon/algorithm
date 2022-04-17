@@ -1,11 +1,16 @@
-package unit10_数学_位图与字符串.part2_数学.topic_3_1加法;
+package unit10_数学_位图与字符串.part2_高频算法题.topic2_4数组实现加法;
 
 import java.util.Arrays;
 
 /**
  * 数组实现整数加法
  */
-public class PlusOne数组加1 {
+public class PlusOne {
+    public static void main(String[] args) {
+        int[] digital = {9};
+        System.out.println(Arrays.toString(plusOne(digital)));
+    }
+
     public static int[] plusOne(int[] digits) {
         int len = digits.length;
         for (int i = len - 1; i >= 0; i--) {
@@ -20,8 +25,5 @@ public class PlusOne数组加1 {
         return digits;
     }
 
-    public static void main(String[] args) {
-        int[] digital = {9};
-        System.out.println(Arrays.toString(plusOne(digital)));
-    }
+
 }
