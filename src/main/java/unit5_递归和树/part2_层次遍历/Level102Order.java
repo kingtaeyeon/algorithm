@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * LeetCode102 题目要求：
+ * 给你一个二叉树，请你返回其按层序遍历得到的节点值。
+ * (即逐层地，从左到右访问所有节点)。
+ */
 public class Level102Order {
     public static void main(String[] args) {
         BinaryTree bTree = new BinaryTree();
