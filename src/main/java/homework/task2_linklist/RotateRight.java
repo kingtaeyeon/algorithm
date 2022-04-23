@@ -17,7 +17,7 @@ public class RotateRight {
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4, 5};
         Node head = initLinkedList(a);
-        int k = 3;
+        int k = 2;
         Node newHead = rotateRight(head,k);
 //        这里应该输出 4 5 1 2 3
         printList(newHead);
