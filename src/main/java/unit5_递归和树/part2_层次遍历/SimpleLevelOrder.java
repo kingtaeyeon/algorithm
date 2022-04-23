@@ -11,8 +11,8 @@ public class SimpleLevelOrder {
     public static void main(String[] args) {
         BinaryTree bTree = new BinaryTree();
         bTree.root = bTree.buildBinaryTree();
-        List<Integer> sim = simpleLevelOrder(bTree.root);
-        System.out.println(sim.toString());
+        List<Integer> level = simpleLevelOrder(bTree.root);
+        System.out.println(level.toString());
     }
 
     public static List<Integer> simpleLevelOrder(TreeNode root) {
