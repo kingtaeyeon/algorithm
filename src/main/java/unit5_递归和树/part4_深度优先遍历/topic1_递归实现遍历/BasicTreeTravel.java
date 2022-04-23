@@ -1,27 +1,20 @@
-package unit5_递归和树;
+package unit5_递归和树.part4_深度优先遍历.topic1_递归实现遍历;
+
+import unit5_递归和树.BinaryTree;
+import unit5_递归和树.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BitTreeTravel {
+/**
+ * 基本的前中后序遍历
+ */
+public class BasicTreeTravel {
     public static void main(String[] args) {
         BinaryTree bTree = new BinaryTree();
         bTree.root = bTree.buildBinaryTree();
 //        bTree.root = bTree.buildBinaryTree();
-        int testMethod = 2;
-
-//        //基本遍历
-//        switch (testMethod) {
-//            case 1://前序
-//                preOrderRecur(bTree.root);
-//                break;
-//            case 2:
-//                inOrderRecur(bTree.root);
-//                break;
-//            case 3:
-//                postOrderRecur(bTree.root);
-//                break;
-//        }
+        int testMethod = 1;
 
         List<Integer> res = new ArrayList<Integer>();
         switch (testMethod) {
@@ -38,47 +31,6 @@ public class BitTreeTravel {
         System.out.println(res);
     }
 
-    /**
-     * 基本的前序遍历
-     *
-     * @param head
-     */
-    public static void preOrderRecur(TreeNode head) {
-        if (head == null) {
-            return;
-        }
-        System.out.print(head.val + " ");
-        preOrderRecur(head.left);
-        preOrderRecur(head.right);
-    }
-
-    /**
-     * 基本的中序遍历
-     *
-     * @param head
-     */
-    public static void inOrderRecur(TreeNode head) {
-        if (head == null) {
-            return;
-        }
-        inOrderRecur(head.left);
-        System.out.print(head.val + " ");
-        inOrderRecur(head.right);
-    }
-
-    /**
-     * 基本的后序遍历
-     *
-     * @param head
-     */
-    public static void postOrderRecur(TreeNode head) {
-        if (head == null) {
-            return;
-        }
-        postOrderRecur(head.left);
-        postOrderRecur(head.right);
-        System.out.print(head.val + " ");
-    }
 
     /**
      * 前序遍历，将结果返回到list中
