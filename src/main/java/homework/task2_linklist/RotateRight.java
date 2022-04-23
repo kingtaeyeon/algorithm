@@ -17,6 +17,7 @@ public class RotateRight {
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4, 5};
         Node head = initLinkedList(a);
+        //k表示将链表每个节点向右移动 k 个位置
         int k = 2;
         Node newHead = rotateRight(head,k);
 //        这里应该输出 4 5 1 2 3
