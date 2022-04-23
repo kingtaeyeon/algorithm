@@ -18,7 +18,7 @@ public class BasicLink {
             newNode.next = null;
             if (i == 0) {
                 head = newNode;
-                cur = head;
+                cur = newNode;
             } else {
                 cur.next = newNode;
                 cur = newNode;
@@ -36,5 +36,7 @@ public class BasicLink {
             next = null;
         }
     }
+
+
 
 }
