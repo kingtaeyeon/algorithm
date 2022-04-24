@@ -81,13 +81,14 @@ public class MaxDepth {
 
     /**
      * N叉树的最大深度问题
+     *
      * @param root
      * @return
      */
     public static int maxDepth_N(NTreeNode root) {
         if (root == null) {
             return 0;
-        } else if (root.children==null || root.children.isEmpty()) {
+        } else if (root.children == null || root.children.isEmpty()) {
             return 1;
         } else {
             List<Integer> heights = new LinkedList<Integer>();
@@ -97,4 +98,6 @@ public class MaxDepth {
             return Collections.max(heights) + 1;
         }
     }
+
+
 }

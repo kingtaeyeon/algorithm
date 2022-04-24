@@ -1,9 +1,9 @@
-package unit5_递归和树;
+package unit5_递归和树.part1_基础知识;
 
 public class TreeNode {
-   public int val;
-   public TreeNode left;
-   public TreeNode right;
+    int val;
+    TreeNode left;
+    TreeNode right;
 
     TreeNode() {
     }
