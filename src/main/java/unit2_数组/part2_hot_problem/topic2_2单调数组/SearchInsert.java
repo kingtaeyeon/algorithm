@@ -5,8 +5,9 @@ package unit2_数组.part2_hot_problem.topic2_2单调数组;
  */
 public class SearchInsert {
     public static void main(String[] args) {
-        int[] arr = {1, 3, 5, 6};
-        System.out.println(searchInsert(arr,2));
+        int[] arr = {1, 2, 3, 6, 8, 9};
+//        System.out.println(searchInsert(arr,2));
+        System.out.println(searchInsertTest(arr,9));
     }
 
     /**
@@ -19,13 +20,19 @@ public class SearchInsert {
      * @Since: 2022/4/26 22:17
      */
     public static int searchInsertTest(int[] nums, int target) {
-        int len = nums.length;
-        int left = 0, right = len - 1, res = len;
-        while (left <= right) {
-            int mid = left + ()
-        }
-
-        return 0;
+       int len = nums.length;
+       int left = 0, right = len -1;
+       int res = len;
+       while (left <= right) {
+           int mid = ((right - left) >> 1) + left;
+           if (target <= nums[mid]) {
+                res = mid;
+                right = mid - 1;
+           } else {
+               left = mid + 1;
+           }
+       }
+       return res;
     }
     
 
