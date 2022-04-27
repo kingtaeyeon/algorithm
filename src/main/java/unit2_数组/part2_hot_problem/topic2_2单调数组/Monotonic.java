@@ -1,7 +1,7 @@
 package unit2_数组.part2_hot_problem.topic2_2单调数组;
 
 /**
- *  热身专题1：判断数组元素是否有序
+ * 热身专题1：判断数组元素是否有序
  * 判断数组的单调性
  * LeetCode 896.单调数列
  * 如果数组是单调递增或单调递减的，那么它是 单调 的。
@@ -10,13 +10,38 @@ package unit2_数组.part2_hot_problem.topic2_2单调数组;
  */
 public class Monotonic {
     public static void main(String[] args) {
-        int a[] = {1, 2, 2, 3};
-        int testMethod = 1;
+        int a[] = {1, 1, 2, 3, 2};
 //        通过两次遍历来实现
         System.out.println(isMonotonic(a));
 //        一次遍历实现
         System.out.println(isMonotonic_2(a));
 
+        System.out.println(testIsMonotonous(a));
+    }
+
+
+    /**
+     * 判断数组是否单调
+     * 如果对于所有 i <= j，A[i] <= A[j]，那么数组 A 是单调递增的。 如果对于所有 i <= j，A[i]>
+     * = A[j]，那么数组 A 是单调递减的
+     *
+     * @param nums
+     * @return boolean
+     * @Author: LiHao
+     * @Since: 2022/4/21 22:57
+     */
+    public static boolean testIsMonotonous(int[] nums) {
+        int len = nums.length;
+        boolean isIncrement = true, isDecrease = true;
+        for (int i = 0; i < len - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                isIncrement = false;
+            }
+            if (nums[i] < nums[i + 1]) {
+                isDecrease = false;
+            }
+        }
+        return isIncrement || isDecrease;
     }
 
     /**
@@ -32,11 +57,11 @@ public class Monotonic {
     public static boolean isSorted(int[] nums, boolean increasing) {
         int n = nums.length;
         for (int i = 0; i < n - 1; ++i) {
-            if(increasing){
+            if (increasing) {
                 if (nums[i] > nums[i + 1]) {
                     return false;
                 }
-            }else{
+            } else {
                 if (nums[i] < nums[i + 1]) {
                     return false;
                 }
@@ -47,8 +72,9 @@ public class Monotonic {
 
     /**
      * 第二种方式，一次遍历确定
-     *如果是递增的就一定不能出现递减的相邻元素，
+     * 如果是递增的就一定不能出现递减的相邻元素，
      * 如果出现递减的就一定不能出现递增的相邻元素。
+     *
      * @param nums
      * @return
      */
