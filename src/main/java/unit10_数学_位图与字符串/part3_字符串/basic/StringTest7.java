@@ -3,6 +3,7 @@ package unit10_数学_位图与字符串.part3_字符串.basic;
 public class StringTest7 {
     public static void main(String[] args) {
         //统计字符串中的小写字母，大写字母数字空格的个数
+        //统计字符串中的小写字母，大写字母数字空格的个数
         String str = "1123ahdiASDFGF    shaid";
         int upper = 0;
         int lower = 0;
@@ -12,13 +13,13 @@ public class StringTest7 {
             //返回该索引处的char值
             char c = str.charAt(i);
             System.out.print(c+" ");
-            if(c>'a'&&c<'z'){
+            if(c>= 'a' && c<='z'){
                 lower++;
             }
-            if(c>'A'&&c<'Z'){
+            if(c>='A'&&c<= 'Z'){
                 upper++;
             }
-            if(c>'0'&&c<'9'){
+            if(c>='0'&&c<='9'){
                 num++;
             }
             if(c==' '){
