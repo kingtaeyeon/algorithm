@@ -1,4 +1,7 @@
-package unit5_递归和树;
+package unit5_递归和树.part4_深度优先遍历.topic6_节点个数;
+
+import unit5_递归和树.BinaryTree;
+import unit5_递归和树.TreeNode;
 
 /**
  * LeetCode 222 完全二叉树的结点个数

@@ -1,4 +1,7 @@
-package unit5_递归和树;
+package unit5_递归和树.part5_中序和搜索树;
+
+import unit5_递归和树.BinaryTree;
+import unit5_递归和树.TreeNode;
 
 /**
  * LeetCode 372 二叉树的最近公共祖先

@@ -1,4 +1,7 @@
-package unit5_递归和树;
+package unit5_递归和树.part4_深度优先遍历.topic4_双指针;
+
+import unit5_递归和树.BinaryTree;
+import unit5_递归和树.TreeNode;
 
 /**
  * leetcode104 对称问题
@@ -37,7 +40,10 @@ public class Symmetry {
         if (p == null || q == null) {
             return false;
         }
-        return p.val == q.val && check(p.left, q.right) && check(p.right, q.left);
+        if (p.val != q.val) {
+            return false;
+        }
+        return check(p.left, q.right) && check(p.right, q.left);
     }
 
 }

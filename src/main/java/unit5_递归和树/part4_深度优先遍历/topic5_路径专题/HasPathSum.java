@@ -1,4 +1,7 @@
-package unit5_递归和树;
+package unit5_递归和树.part4_深度优先遍历.topic5_路径专题;
+
+import unit5_递归和树.BinaryTree;
+import unit5_递归和树.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Deque;
@@ -6,58 +9,27 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 路径相关问题
+ * LeetCode 112
+ * 给你二叉树的根节点 root 和一个表示目标和的整数 targetSum 。
+ * 判断该树中是否存在 根节点到叶子节点 的路径，这条路径上所有节点值相加等于目标和 targetSum 。
+ * 如果存在，返回 true ；否则，返回 false 。
  */
-public class Path {
+public class HasPathSum {
     public static void main(String[] args) {
         BinaryTree bTree = new BinaryTree();
         bTree.root = bTree.buildBinaryTree();
 
-        int testMethod = 3;
-        switch (testMethod) {
-            case 1://LeetCode257 二叉树的所有路径
-                List<String> result = binaryTreePaths_1(bTree.root);
-                System.out.println(result);
-                break;
-            case 2:
-                boolean result1 = hasPathSum(bTree.root, 12);
-                System.out.println(result1);
-                break;
-            case 3:
-                List<List<Integer>> pathSum = pathSum(bTree.root, 12);
-                System.out.println(pathSum);
+        boolean result1 = hasPathSum(bTree.root, 12);
+        System.out.println(result1);
 
-
-        }
+        List<List<Integer>> pathSum = pathSum(bTree.root, 12);
+        System.out.println(pathSum);
 
 
     }
 
-    /**
-     * 问题1：LeetCode257 二叉树的所有路径
-     *
-     * @param root
-     * @return
-     */
-    public static List<String> binaryTreePaths_1(TreeNode root) {
-        List<String> res = new ArrayList<>();
-        dfs(root, "", res);
-        return res;
-    }
 
-    private static void dfs(TreeNode root, String path, List<String> res) {
-        //如果为空，直接返回
-        if (root == null)
-            return;
-        //如果是叶子节点，说明找到了一条路径，把它加入到res中
-        if (root.left == null && root.right == null) {
-            res.add(path + root.val);
-            return;
-        }
-        //如果不是叶子节点，在分别遍历他的左右子节点
-        dfs(root.left, path + root.val + "->", res);
-        dfs(root.right, path + root.val + "->", res);
-    }
+
 
     /**
      * 问题2：LeetCode112. 路径总和

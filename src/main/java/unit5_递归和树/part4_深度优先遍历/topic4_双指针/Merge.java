@@ -1,4 +1,7 @@
-package unit5_递归和树;
+package unit5_递归和树.part4_深度优先遍历.topic4_双指针;
+
+import unit5_递归和树.BinaryTree;
+import unit5_递归和树.TreeNode;
 
 /**
  * LeetCode617 合并两个二叉树
@@ -12,12 +15,13 @@ public class Merge {
         bTree2.root = bTree2.buildBinaryTree();
 
         TreeNode newTree = mergeTrees(bTree1.root, bTree2.root);
-        System.out.println(newTree);
+        System.out.println(newTree.val);
 
     }
 
     /**
      * LeetCode617 合并两个二叉树
+     *
      * @param t1
      * @param t2
      * @return

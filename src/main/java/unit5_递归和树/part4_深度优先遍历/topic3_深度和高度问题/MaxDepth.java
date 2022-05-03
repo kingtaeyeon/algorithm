@@ -1,4 +1,9 @@
-package unit5_递归和树;
+package unit5_递归和树.part4_深度优先遍历.topic3_深度和高度问题;
+
+import unit5_递归和树.BinaryTree;
+import unit5_递归和树.NTree;
+import unit5_递归和树.NTreeNode;
+import unit5_递归和树.TreeNode;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -22,10 +27,8 @@ public class MaxDepth {
             case 2://通过层次遍历计算二叉树的深度
                 result = maxDepth_2(bTree.root);
                 break;
-            case 3: //N叉树的最大深度问题
-                NTree nTree = new NTree();
-                nTree.root = nTree.buildNTree();
-                result = maxDepth_N(nTree.root);
+
+
         }
 
         System.out.println(result);
@@ -79,25 +82,7 @@ public class MaxDepth {
         return ans;
     }
 
-    /**
-     * N叉树的最大深度问题
-     *
-     * @param root
-     * @return
-     */
-    public static int maxDepth_N(NTreeNode root) {
-        if (root == null) {
-            return 0;
-        } else if (root.children == null || root.children.isEmpty()) {
-            return 1;
-        } else {
-            List<Integer> heights = new LinkedList<Integer>();
-            for (NTreeNode item : root.children) {
-                heights.add(maxDepth_N(item));
-            }
-            return Collections.max(heights) + 1;
-        }
-    }
+
 
 
 }
