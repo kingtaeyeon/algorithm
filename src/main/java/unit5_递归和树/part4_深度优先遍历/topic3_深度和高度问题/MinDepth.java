@@ -3,6 +3,7 @@ package unit5_递归和树.part4_深度优先遍历.topic3_深度和高度问题
 import unit5_递归和树.BinaryTree;
 import unit5_递归和树.TreeNode;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -12,9 +13,8 @@ import java.util.Queue;
 public class MinDepth {
     public static void main(String[] args) {
         BinaryTree bTree = new BinaryTree();
-//        bTree.root = bTree.buildBinaryTree();
         bTree.root = bTree.buildBinaryTreeComplex();
-        int testMethod = 1;
+        int testMethod = 2;
         int result = 0;
         switch (testMethod) {
             case 1://通过递归计算二叉树的深度
@@ -23,9 +23,7 @@ public class MinDepth {
             case 2://通过层次遍历计算二叉树的深度
                 result = minDepth_2(bTree.root);
                 break;
-
         }
-
         System.out.println(result);
     }
 
@@ -63,34 +61,32 @@ public class MinDepth {
         if (root == null) {
             return 0;
         }
+        int minDepth = 0;
 
-        Queue<QueueNode> queue = new LinkedList<QueueNode>();
-        queue.offer(new QueueNode(root, 1));
-        while (!queue.isEmpty()) {
-            QueueNode nodeDepth = queue.poll();
-            TreeNode node = nodeDepth.node;
-            int depth = nodeDepth.depth;
-            if (node.left == null && node.right == null) {
-                return depth;
-            }
-            if (node.left != null) {
-                queue.offer(new QueueNode(node.left, depth + 1));
-            }
-            if (node.right != null) {
-                queue.offer(new QueueNode(node.right, depth + 1));
+        LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        while (queue.size() > 0) {
+            //获取当前队列的长度，这个长度相当于 当前这一层的节点个数
+            int size = queue.size();
+            ArrayList<Integer> tmp = new ArrayList<Integer>();
+            //将队列中的元素都拿出来(也就是获取这一层的节点)，放到临时list中
+            //如果节点的左/右子树不为空，也放入队列中
+
+            minDepth++;
+            for (int i = 0; i < size; ++i) {
+                TreeNode t = queue.remove();
+                if (t.left == null && t.right == null) {
+                    return minDepth;
+                }
+                if (t.left != null) {
+                    queue.add(t.left);
+                }
+                if (t.right != null) {
+                    queue.add(t.right);
+                }
             }
         }
-
         return 0;
     }
 
-   static class QueueNode {
-        TreeNode node;
-        int depth;
-
-        public QueueNode(TreeNode node, int depth) {
-            this.node = node;
-            this.depth = depth;
-        }
-    }
 }

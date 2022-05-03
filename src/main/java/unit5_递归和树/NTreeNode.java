@@ -6,9 +6,6 @@ public class NTreeNode {
    public int val;
     public  List<NTreeNode> children;
 
-    NTreeNode() {
-    }
-
     NTreeNode(int val) {
         this.val = val;
     }
