@@ -10,7 +10,7 @@ import java.util.LinkedList;
  * LeetCode98.给你一个二叉树的根节点 root ，
  * 判断其是否是一个有效的二叉搜索树。
  */
-public class IsValidBST {
+public class topic3_IsValidBST {
 
     public static void main(String[] args) {
         BinaryTree bTree = new BinaryTree();

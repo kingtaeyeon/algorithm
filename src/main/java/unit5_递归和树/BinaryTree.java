@@ -20,13 +20,25 @@ public class BinaryTree {
         return node;
     }
 
+    /**
+     * 用于搜索树的公共父结点问题
+     * @return
+     */
 
-    public TreeNode buildBinaryTree2() {
-        TreeNode node = new TreeNode(3);
-        node.left = new TreeNode(9);
-        node.right = new TreeNode(20);
-        node.right.right = new TreeNode(7);
-        node.right.left = new TreeNode(15);
+    public static TreeNode buildLowestCommonAncestor() {
+        TreeNode node = new TreeNode(6);
+        node.left = new TreeNode(2);
+        node.right = new TreeNode(8);
+
+        node.left.left = new TreeNode(0);
+        node.left.right = new TreeNode(4);
+
+        node.left.right.left = new TreeNode(3);
+        node.left.right.right = new TreeNode(5);
+
+        node.right.left = new TreeNode(7);
+        node.right.right = new TreeNode(9);
+
         return node;
 
     }
