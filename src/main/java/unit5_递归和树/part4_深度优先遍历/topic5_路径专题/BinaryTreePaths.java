@@ -17,7 +17,6 @@ public class BinaryTreePaths {
         System.out.println(result);
     }
 
-
     public static List<String> binaryTreePaths(TreeNode root) {
         List<String> res = new ArrayList<>();
         dfs(root, "", res);

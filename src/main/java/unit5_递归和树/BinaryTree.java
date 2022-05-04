@@ -33,6 +33,7 @@ public class BinaryTree {
 
     /**
      * 对称的二叉树
+     *
      * @return
      */
     public TreeNode buildBinaryTree3() {
@@ -47,6 +48,18 @@ public class BinaryTree {
 
         return node;
 
+    }
+
+    /**
+     * 建立搜索树
+     */
+    public TreeNode buildBSTTree() {
+        TreeNode node = new TreeNode(4);
+        node.left = new TreeNode(2);
+        node.right = new TreeNode(7);
+        node.left.left = new TreeNode(1);
+        node.left.right = new TreeNode(3);
+        return node;
     }
 
     /**
