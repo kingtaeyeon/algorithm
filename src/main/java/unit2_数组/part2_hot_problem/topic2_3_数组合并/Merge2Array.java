@@ -12,7 +12,7 @@ import static tools.ArrayTool.printList;
  */
 public class Merge2Array {
     public static void main(String[] args) {
-        int[] arr1 = {1,2,3,0,0,0,};
+        int[] arr1 = {1,2,7,0,0,0,};
         int[] arr2 = new int[]{2, 5, 6};
 
         int testMethod = 3;
@@ -24,7 +24,7 @@ public class Merge2Array {
                 merge2(arr1, 3, arr2, 3);
                 break;
             case 3://对2的优化
-                merge3(arr1, 3, arr2, 3);
+                merge3Test(arr1, 3, arr2, 3);
                 break;
         }
 
@@ -68,6 +68,55 @@ public class Merge2Array {
         while (len2 != -1) nums1[i--] = nums2[len2--];
         while (len1 != -1) nums1[i--] = nums1[len1--];
     }
+
+    /**
+     * 给你两个按⾮递减顺序排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，
+     * 分别表示 nums1 和 nums2 中的元素数⽬。请你合并 nums2 到 nums1 中，使合并后的数组同
+     * 样按⾮递减顺序排列
+     * 方法2：两个数组从后向前逐步合并
+     *
+     * @param nums1
+     * @param nums1_len
+     * @param nums2
+     * @param nums2_len
+     */
+    public static void merge2Test(int[] nums1, int nums1_len, int[] nums2, int nums2_len) {
+        int len = nums1_len + nums2_len -1;
+        int len1 = nums1_len -1, len2 = nums2_len -1;
+        while (len1 >= 0 && len2 >= 0) {
+            if (nums1[len1] >= nums2[len2]) {
+               nums1[len--] = nums1[len1--];
+            } else {
+                nums1[len--] = nums2[len2--];
+            }
+        }
+        while (len2 >= 0) {
+            nums1[len--] = nums2[len2--];
+        }
+    }
+
+    /**
+     * 给你两个按⾮递减顺序排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，
+     * 分别表示 nums1 和 nums2 中的元素数⽬。请你合并 nums2 到 nums1 中，使合并后的数组同
+     * 样按⾮递减顺序排列
+     * 方法2：两个数组从后向前逐步合并
+     *
+     * @param nums1
+     * @param nums1_len
+     * @param nums2
+     * @param nums2_len
+     */
+    public static void merge3Test(int[] nums1, int nums1_len, int[] nums2, int nums2_len) {
+        int index = nums1_len + nums2_len -1;
+        int len1 = nums1_len -1, len2 = nums2_len -1;
+        while (len1 >= 0 && len2 >= 0) {
+            nums1[index--] = nums1[len1] >= nums2[len2] ? nums1[len1--] : nums2[len2--];
+        }
+        while (len2 >= 0) {
+            nums1[index--] = nums2[len2--];
+        }
+    }
+
 
     /**
      * 方法3：优化上面的方法2

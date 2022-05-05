@@ -13,9 +13,37 @@ public class MergeKArray {
 
 //        执行合并多个数组的算法，每一行视为一个数组，
 //        总行数视为需要合并的多个一维数组
-        int[] a = mergeArrays(twoArray);
-
+//        int[] a = mergeArrays(twoArray);
+        int[] a = mergeArraysTest(twoArray);
         System.out.println(Arrays.toString(a));
+    }
+
+    /**
+     * 将一个多行的二维数组合并成一个一维数组，用来模拟一个待合并的多个一维数组
+     *
+     * @param array
+     * @return
+     */
+    public static int[] mergeArraysTest(int[][] array) {
+
+        int num = array.length;
+        if (num == 0) {
+            return new int[0];
+        }
+        int len = array[0].length;
+        for (int i = 0; i< num; i++) {
+            if (array[i].length != len) {
+                return new int[0];
+            }
+        }
+        int result[] = new int[num * len];
+        for (int i = 0; i < num; i++) {
+            for (int j = 0; j < len; j++) {
+                result[num * i + j] = array[i][j];
+            }
+        }
+        Arrays.sort(result);
+        return result;
     }
 
     /**
