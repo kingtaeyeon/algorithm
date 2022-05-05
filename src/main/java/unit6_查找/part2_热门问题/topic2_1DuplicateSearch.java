@@ -1,9 +1,12 @@
-package unit6_查找.hot_problem;
+package unit6_查找.part2_热门问题;
 
+/**
+ * 在序列中存在重复元素时的二分查找
+ */
 
-public class 存在重复元素的查找 {
+public class topic2_1DuplicateSearch {
     public static void main(String[] args) {
-        int[] array = {1, 2,2, 3, 3, 3, 3, 4, 5, 6, 7, 8, 9};
+        int[] array = {1, 2, 2, 3, 3, 3, 3, 4, 5, 6, 7, 8, 9};
         int result = -1;
         int testMethod = 1;
         switch (testMethod) {

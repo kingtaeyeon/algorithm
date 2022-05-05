@@ -1,4 +1,4 @@
-package unit6_查找;
+package unit6_查找.part1_基础;
 
 public class BinarySearch {
     public static void main(String[] args) {
