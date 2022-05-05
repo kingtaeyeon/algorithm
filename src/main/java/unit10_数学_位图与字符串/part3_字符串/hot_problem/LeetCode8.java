@@ -3,7 +3,7 @@ package unit10_数学_位图与字符串.part3_字符串.hot_problem;
 public class LeetCode8 {
     public static void main(String[] args) {
 
-        String str = "-2147483640";
+        String str = "-2147483648";
         int res = myAtoi(str);
         System.out.println(res);
 
@@ -46,7 +46,9 @@ public class LeetCode8 {
                 break;
             }
 
-            // 题目中说：环境只能存储 32 位大小的有符号整数，因此，需要提前判断乘以 10 以后是否越界
+            // 题目中说只能存储 32 位大小的有符号整数，下面两个if分别处理整数和负数的情况。
+            // 提前判断乘以10以后是否越界,但res*10可能会越界，所以这里使用Integer.MAX_VALUE/10，这样一定不会越界。
+            // 这是解决溢出问题的经典处理方式
             if (res > Integer.MAX_VALUE / 10 || (res == Integer.MAX_VALUE / 10 && (currChar - '0') > Integer.MAX_VALUE % 10)) {
                 return Integer.MAX_VALUE;
             }
@@ -54,7 +56,8 @@ public class LeetCode8 {
                 return Integer.MIN_VALUE;
             }
 
-            // 4.2 合法的情况下，才考虑转换，每一步都把符号位乘进去
+            // 合法的情况下，才考虑转换，每一步都把符号位乘进去
+            // 想想这里为什么要带着sign乘
             res = res * 10 + sign * (currChar - '0');
             index++;
         }

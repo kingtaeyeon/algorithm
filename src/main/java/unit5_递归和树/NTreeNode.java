@@ -3,11 +3,8 @@ package unit5_递归和树;
 import java.util.List;
 
 public class NTreeNode {
-    int val;
-    List<NTreeNode> children;
-
-    NTreeNode() {
-    }
+   public int val;
+    public  List<NTreeNode> children;
 
     NTreeNode(int val) {
         this.val = val;
