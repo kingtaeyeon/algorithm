@@ -11,12 +11,50 @@ import java.util.*;
  * （即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）
  */
 public class ZigzagLevelOrder {
+
     public static void main(String[] args) {
         BinaryTree bTree = new BinaryTree();
         bTree.root = bTree.buildBinaryTree();
-        List<List<Integer>> level = zigzagLevelOrder(bTree.root);
+        List<List<Integer>> level = test(bTree.root);
         System.out.println(level.toString());
     }
+
+    public static List<List<Integer>> test(TreeNode root) {
+        LinkedList<List<Integer>> result = new LinkedList<>();
+        if (root == null) {
+            return result;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        boolean isOrderLeft = true;
+        while (!queue.isEmpty()) {
+            LinkedList<Integer> lines = new LinkedList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; ++i) {
+                TreeNode node = queue.poll();
+                if (isOrderLeft) {
+                    lines.addLast(node.val);
+                } else {
+                    lines.addFirst(node.val);
+                }
+                TreeNode left = node.getLeft();
+                if (Objects.nonNull(left)) {
+                    queue.add(left);
+                }
+                TreeNode right = node.getRight();
+                if (Objects.nonNull(right)) {
+                    queue.add(right);
+                }
+            }
+//          result.add(new LinkedList<Integer>(lines));
+            result.add(lines);
+            isOrderLeft = !isOrderLeft;
+        }
+        return result;
+    }
+
+
+
 
     public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> ans = new LinkedList<List<Integer>>();
@@ -48,5 +86,52 @@ public class ZigzagLevelOrder {
         }
         return ans;
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    public static void main(String[] args) {
+//        BinaryTree bTree = new BinaryTree();
+//        bTree.root = bTree.buildBinaryTree();
+//        List<List<Integer>> level = zigzagLevelOrder(bTree.root);
+//        System.out.println(level.toString());
+//    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

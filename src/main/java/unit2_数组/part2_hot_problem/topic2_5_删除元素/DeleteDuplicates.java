@@ -10,7 +10,31 @@ public class DeleteDuplicates {
         for (int i = 0; i < last; i++) {
             System.out.print(arr[i] + "  ");
         }
+
+        for (int i = 0; i < last; i++) {
+            System.out.print(arr[i] + "  ");
+        }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static int removeDuplicates(int[] nums) {
         //slow表示可以放入新元素的位置，索引为0的元素不用管

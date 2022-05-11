@@ -9,16 +9,42 @@ public class DeleteVal {
     public static void main(String[] args) {
         int[] arr = {3, 2, 2, 3, 3};
         int test = 0;
-
-        if (test == 1) {//快慢指针
-            System.out.println(removeElement(arr, 3));
-        } else if (test==2){//标准的双指针
-            System.out.println(removeElement2(arr, 2));
-        }else{//优化的双指针
-            System.out.println(removeElement3(arr, 3));
+        DeleteVal deleteVal = new DeleteVal();
+        int result = deleteVal.removeSameNumBySlowFastPoint(arr, 2);
+        System.out.println(result);
+        for (int i = 0; i < result; i++) {
+            System.out.print(arr[i] + "  ");
         }
+//        if (test == 1) {//快慢指针
+//            System.out.println(removeElement(arr, 3));
+//        } else if (test==2){//标准的双指针
+//            System.out.println(removeElement2(arr, 2));
+//        }else{//优化的双指针
+//            System.out.println(removeElement3(arr, 3));
+//        }
 
     }
+
+
+    public int removeSameNumBySlowFastPoint(int[] nums, int target) {
+        int slow = 0;
+        for (int fast = 0; fast < nums.length; ++fast) {
+            if (nums[fast] != target) {
+                nums[slow] = nums[fast];
+                slow++;
+            }
+
+        }
+        return slow;
+    }
+
+
+
+
+
+
+
+
 
     /**
      * 方法1：使用快慢型双指针
